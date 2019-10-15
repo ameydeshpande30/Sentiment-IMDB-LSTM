@@ -16,9 +16,9 @@ MAX_WORDS = 20000
 EMBENDING_DIM = 100
 from termcolor import colored
 # In[2]:
+epochs = str(input("Enter epochs"))
 
-
-pkl_filename = "tokenizer.pkl"
+pkl_filename = epochs + "/tokenizer.pkl"
 with open(pkl_filename, 'rb') as file:
     tokenizer = pickle.load(file)
 
@@ -26,7 +26,7 @@ with open(pkl_filename, 'rb') as file:
 # In[3]:
 
 
-model = load_model("sentiment.model")
+model = load_model(epochs + "/sentiment.model")
 os.system("clear")
 print("Enter any review")
 
